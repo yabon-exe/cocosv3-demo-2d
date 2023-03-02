@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, Vec2, v2, v3, Color, Camera, Graphics, find, EventTouch, Canvas, UITransform, view } from 'cc';
+import { _decorator, Component, Node, Vec2, v2, v3, Color, Camera, Graphics, find, EventTouch, UITransform } from 'cc';
 const { ccclass, property } = _decorator;
 
 /**
