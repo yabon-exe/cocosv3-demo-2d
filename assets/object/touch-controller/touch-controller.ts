@@ -65,7 +65,6 @@ export class TouchController extends Component {
         // スワイプライン描画
         this.graphics.lineWidth = distance;
         this.graphics.strokeColor = Color.WHITE;
-        // this.graphics.strokeColor.setA(128);
         this.graphics.moveTo(this.controllerLineStart.x, this.controllerLineStart.y);
         this.graphics.lineTo(lineTo.x, lineTo.y);
         this.graphics.stroke();
@@ -150,8 +149,6 @@ export class TouchController extends Component {
     }
 
     start() {
-
-
     }
 
     update() {
