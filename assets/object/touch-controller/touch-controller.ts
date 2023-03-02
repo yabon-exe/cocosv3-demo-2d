@@ -52,7 +52,7 @@ export class TouchController extends Component {
     drawSwipeLine() {
         this.graphics.clear();
 
-        let distance = this.swipeVec.length()  / 5.0;
+        let distance = this.swipeVec.length();
         if (distance > this.swipeDistanceLimit) {
             // スワイプベクトルの最大値制限
             distance = this.swipeDistanceLimit;
@@ -63,7 +63,7 @@ export class TouchController extends Component {
         );
 
         // スワイプライン描画
-        this.graphics.lineWidth = distance / 5.0;
+        this.graphics.lineWidth = distance;
         this.graphics.strokeColor = Color.WHITE;
         // this.graphics.strokeColor.setA(128);
         this.graphics.moveTo(this.controllerLineStart.x, this.controllerLineStart.y);
