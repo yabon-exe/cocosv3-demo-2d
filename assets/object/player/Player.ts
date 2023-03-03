@@ -8,20 +8,12 @@ const { ccclass, property } = _decorator;
 export default class Player extends Component {
     touchController: any = null;
     rigidBody: RigidBody2D = null;
-    onLoad() {
-
-        // touch-controllerを取得する
-        this.touchController = find("TouchController", this.node.parent).getComponent('TouchController');
-
-        // 自身のボディを取得する
-        this.rigidBody = this.node.getComponent(RigidBody2D);
-
-
-    }
     
     start() {
-
-
+        // touch-controllerを取得する
+        this.touchController = find("TouchController", this.node.parent).getComponent('TouchController');
+        // 自身のボディを取得する
+        this.rigidBody = this.node.getComponent(RigidBody2D);
     }
     update() {
 

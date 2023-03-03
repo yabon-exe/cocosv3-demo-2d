@@ -109,8 +109,7 @@ export class TouchController extends Component {
         this.swipeVec = v2(0, 0);
     }
 
-
-    onLoad() {
+    start() {
         let canvasNode = this.node.parent;
         this.canvasUIT = canvasNode.getComponent(UITransform);
         this.graphics = this.node.getComponent(Graphics);
@@ -146,9 +145,7 @@ export class TouchController extends Component {
             this.resetSwipeVec();
             this.clearGraphics();
         }, this);
-    }
 
-    start() {
     }
 
     update() {
