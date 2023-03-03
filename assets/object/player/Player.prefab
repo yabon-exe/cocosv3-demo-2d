@@ -201,7 +201,7 @@
     "fileId": "1c13WjEB9DVaEF+qm21ZNz"
   },
   {
-    "__type__": "14630jXyU5EtJrUSfLdS/xR",
+    "__type__": "1a965CRfo9MoZkc95TD4qXD",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -215,7 +215,7 @@
   },
   {
     "__type__": "cc.CompPrefabInfo",
-    "fileId": "ca5WxGi7NCNKJE61uYNPaa"
+    "fileId": "92l3yoirJMsZ7nMhZDx/g3"
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -226,6 +226,7 @@
       "__id__": 0
     },
     "fileId": "afYpp6lo1F1prBgJAMsnFq",
+    "instance": null,
     "targetOverrides": null
   }
 ]
