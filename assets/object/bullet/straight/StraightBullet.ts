@@ -35,10 +35,8 @@ export class StraightBullet extends Bullet {
      * @param contact 接触情報
      */
     onBeginContact(selfCollider: Collider2D, otherCollider: Collider2D, contact: any): void {
-        console.log('-----------------------');
-        console.log(selfCollider.name);
-        console.log(otherCollider.name);
-        console.log('=======================');
+        console.log(selfCollider);
+        this.alive = false;
     }
 }
 

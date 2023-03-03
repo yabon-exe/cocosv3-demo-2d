@@ -13,6 +13,11 @@ export abstract class Bullet extends Component {
     bulletProperty: {};
 
     /**
+     * 生存フラグ
+     */
+    alive:boolean;
+
+    /**
      * ※継承
      * 弾丸初期化
      * @param bulletProperty 弾丸のプロパティ
@@ -30,6 +35,7 @@ export abstract class Bullet extends Component {
 
     start() {
         // 弾丸初期化
+        this.alive = true;
         this.init(this.bulletProperty);
         // 弾丸の衝突イベント設定
         const collider = this.getComponent(Collider2D);
