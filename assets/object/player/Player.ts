@@ -1,5 +1,5 @@
 import { _decorator, Component, RigidBody2D, find, v2, Collider2D, Contact2DType, ColliderComponent } from 'cc';
-const { ccclass, property } = _decorator;
+const { ccclass } = _decorator;
 
 /**
 * プレイヤー
