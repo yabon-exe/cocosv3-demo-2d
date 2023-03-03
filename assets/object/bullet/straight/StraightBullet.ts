@@ -1,9 +1,9 @@
-import { _decorator, RigidBody2D, v2, Collider2D } from 'cc';
+import { _decorator, RigidBody2D, Vec2, v2, Collider2D } from 'cc';
 import { Bullet } from '../Bullet'
-const { ccclass, property } = _decorator;
+const { ccclass } = _decorator;
 
 /**
- * まっすぐ飛ぶ弾丸
+ * プレイヤーに向かってまっすぐ飛ぶ弾丸
  */
 @ccclass('StraightBullet')
 export class StraightBullet extends Bullet {
@@ -19,7 +19,13 @@ export class StraightBullet extends Bullet {
         this.rigidBody = this.node.getComponent(RigidBody2D);
         // プレイヤー情報を取得する
         let player = bulletProperty.player;
-        this.rigidBody.linearVelocity = v2(5, 0);
+        // 移動方向・速度を設定する
+        let playerPos: Vec2 = v2( player.node.position.x, player.node.position.y);
+        let myPos: Vec2 = v2( this.node.position.x, this.node.position.y);
+        let vel: Vec2 = playerPos.subtract(myPos);
+        vel.normalize();
+        vel.multiplyScalar(3);
+        this.rigidBody.linearVelocity = vel;
     }
 
     /**
