@@ -57,15 +57,17 @@ export class Battery extends Component {
 
         let delIdxs: Array<number> = [];
         let idx = 0;
+        // 削除(生存フラグが折れた)弾のインデックスを取得する
         this.bulletList.forEach((bullet: Bullet) => {
             if (!bullet.alive) {
-                bullet.destroy();
                 delIdxs.push(idx);
             }
             idx++;
         });
 
+        // インスタンス化した弾を削除する
         delIdxs.forEach((idx: number) => {
+            this.bulletList[idx].node.destroy()
             this.bulletList.splice(idx, 1);
         });
     }
