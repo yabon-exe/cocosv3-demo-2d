@@ -26,7 +26,7 @@ export abstract class Bullet extends Component {
 
     /**
      * ※継承
-     * 弾丸初期化
+     * 衝突処理
      * @param selfCollider 自身の接触オブジェクト
      * @param otherCollider 相手の接触オブジェクト
      * @param contact 接触情報

@@ -1,5 +1,6 @@
-import { _decorator, Component, Prefab, instantiate, find } from 'cc';
+import { _decorator, Component, Prefab, instantiate, find, Collider2D } from 'cc';
 import { Bullet } from '../bullet/Bullet'
+import { Property } from '../property/Property'
 const { ccclass, property } = _decorator;
 
 /**
@@ -12,6 +13,8 @@ export class Battery extends Component {
     player: any;
 
     bulletList: Array<Bullet> = [];
+
+    bulletTag: number;
 
     /**
      * 弾のPrefab
@@ -33,6 +36,9 @@ export class Battery extends Component {
         let bullet = instantiate(this.bulletPrefab).getComponent('Bullet') as Bullet;
 
         if (bullet) {
+            // 弾丸タグを設定する
+            let bulletCollider: Collider2D = bullet.getComponent(Collider2D);
+            bulletCollider.tag = this.bulletTag;
             // 弾丸リストに登録する
             this.bulletList.push(bullet);
             // 弾の位置は発射台と同じにする
@@ -51,6 +57,10 @@ export class Battery extends Component {
         this.player = find('Player', this.node.parent).getComponent('Player');
         // 弾の発射設定
         this.schedule(this.fire, this.bulletInterval);
+        // 弾丸タグを取得する
+        let property = find('Property', this.node.parent).getComponent('Property') as Property;
+        let tag = property.getTag('BULLET');
+        this.bulletTag = tag;
     }
 
     update(deltaTime: number) {
