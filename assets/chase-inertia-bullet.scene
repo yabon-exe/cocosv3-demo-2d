@@ -1,7 +1,7 @@
 [
   {
     "__type__": "cc.SceneAsset",
-    "_name": "accelerate-bullet",
+    "_name": "chase-inertia-bullet",
     "_objFlags": 0,
     "_native": "",
     "scene": {
@@ -10,7 +10,7 @@
   },
   {
     "__type__": "cc.Scene",
-    "_name": "accelerate-bullet",
+    "_name": "chase-inertia-bullet",
     "_objFlags": 0,
     "_parent": null,
     "_children": [
@@ -54,7 +54,7 @@
     "_globals": {
       "__id__": 75
     },
-    "_id": "513ea046-e80a-4988-8b23-97737f3dd9ec"
+    "_id": "394a688a-59f6-48e6-b1be-b775439f117d"
   },
   {
     "__type__": "cc.Node",
@@ -554,7 +554,7 @@
       "bulletPrefab"
     ],
     "value": {
-      "__uuid__": "fde8a661-18e2-4051-becf-4536529e376b",
+      "__uuid__": "14853851-5a75-4ff0-a2d7-e0da34034ace",
       "__expectedType__": "cc.Prefab"
     }
   },
