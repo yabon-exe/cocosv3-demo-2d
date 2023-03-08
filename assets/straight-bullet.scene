@@ -534,7 +534,7 @@
     "propertyPath": [
       "bulletInterval"
     ],
-    "value": 2
+    "value": 1
   },
   {
     "__type__": "cc.TargetInfo",
