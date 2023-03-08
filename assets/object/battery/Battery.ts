@@ -58,7 +58,7 @@ export class Battery extends Component {
         // 弾の発射設定
         this.schedule(this.fire, this.bulletInterval);
         // 弾丸タグを取得する
-        let property = find('Property', this.node.parent).getComponent('Property') as Property;
+        let property = find('Property', this.node.parent).getComponent(Property);
         let tag = property.getTag('BULLET');
         this.bulletTag = tag;
     }
@@ -77,8 +77,11 @@ export class Battery extends Component {
 
         // インスタンス化した弾を削除する
         delIdxs.forEach((idx: number) => {
-            this.bulletList[idx].node.destroy()
-            this.bulletList.splice(idx, 1);
+            if (this.bulletList.length > idx && this.bulletList[idx].node != undefined) {
+                // ノードが存在している（削除済みになっていない）弾丸を削除する
+                this.bulletList[idx].node.destroy()
+                this.bulletList.splice(idx, 1);
+            }
         });
     }
 }
